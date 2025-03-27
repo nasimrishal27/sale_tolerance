@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <menuitem id="sale_tolerance_menu_root"
+              name="Sale Tolerance"
+              sequence="1"/>
+    <menuitem id="sale_order_menu_action"
+              name="Sale Order"
+              parent="sale_tolerance_menu_root"
+              sequence="1"
+              action="sale_order_action"/>
+    <menuitem id="sale_tolerance_configuration_menu_action"
+              name="Configuration"
+              parent="sale_tolerance_menu_root"
+              sequence="2"/>
+    <menuitem id="res_partner_menu_action"
+              name="Customer Management"
+              parent="sale_tolerance_configuration_menu_action"
+              sequence="1"
+              action="res_partner_action"/>
+<!--    <menuitem id="property_facilities_menu_action"-->
+<!--              name="Property Facilities"-->
+<!--              parent="property_configuration_menu_action"-->
+<!--              sequence="2"-->
+<!--              action="property_facilities_action"/>-->
+</odoo>

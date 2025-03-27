@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="stock_picking_view_form" model="ir.ui.view">
+        <field name="name">stock.picking.form.inherit</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='button_validate']" position="attributes">
+                <attribute name="invisible">hide_validate_button</attribute>
+            </xpath>
+            <xpath expr="//button[@name='action_assign']" position="after">
+                <button name="action_validate" string="Validate" type="object" class="oe_highlight" invisible="hide_validate_button == False"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
