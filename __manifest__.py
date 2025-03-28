@@ -2,7 +2,7 @@
 {
     'name': "Sales Tolerance",
     'version': '1.0',
-    'depends': ['base', 'contacts', 'sale', 'stock'],
+    'depends': ['base', 'contacts', 'sale', 'sale_stock'],
     'sequence': 1,
     'author': "Suni",
     'category': 'All',
