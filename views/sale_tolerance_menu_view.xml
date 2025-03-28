@@ -17,9 +17,4 @@
               parent="sale_tolerance_configuration_menu_action"
               sequence="1"
               action="res_partner_action"/>
-<!--    <menuitem id="property_facilities_menu_action"-->
-<!--              name="Property Facilities"-->
-<!--              parent="property_configuration_menu_action"-->
-<!--              sequence="2"-->
-<!--              action="property_facilities_action"/>-->
 </odoo>
