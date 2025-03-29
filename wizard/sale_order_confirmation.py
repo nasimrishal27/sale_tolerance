@@ -4,13 +4,14 @@ from odoo.exceptions import UserError
 
 
 class SaleOrderConfirmation(models.Model):
-    """ Sale order confirmation wizard model """
     _name = "sale.order.confirmation"
 
     pick_id = fields.Many2one('stock.picking')
 
     def action_proceed(self):
         """User accepts the out-of-range transfer quantity."""
+        print(self.env.context)
+        print(self.env.context.get('default_picking_id'))
         pickings_to_validate_id = self.env.context.get('default_picking_id')
         if pickings_to_validate_id:
             pickings_to_validate = self.env['stock.picking'].browse(pickings_to_validate_id)

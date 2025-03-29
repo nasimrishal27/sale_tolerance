@@ -8,15 +8,12 @@
             <xpath expr="//field[@name='origin']" position="after">
                 <field name="hide_validate_button" invisible="1"/>
             </xpath>
-            <xpath expr="//button[@name='button_validate'][contains(@class, 'oe_highlight')]" position="attributes">
-                <attribute name="invisible">hide_validate_button or (state in ('draft', 'confirmed', 'done', 'cancel'))</attribute>
-            </xpath>
-            <xpath expr="//button[@name='button_validate'][contains(@class, 'o_btn_validate')]" position="attributes">
-                <attribute name="invisible">hide_validate_button or (state in ('waiting', 'assigned', 'done', 'cancel'))</attribute>
+            <xpath expr="//button[@name='button_validate']" position="attributes">
+                <attribute name="invisible">hide_validate_button</attribute>
             </xpath>
             <xpath expr="//button[@name='action_assign']" position="after">
                 <button name="action_validate" string="Validate" type="object" class="oe_highlight"
-                        invisible="hide_validate_button == False or state in ('draft', 'done', 'cancel')"/>
+                        invisible="hide_validate_button == False"/>
             </xpath>
         </field>
     </record>

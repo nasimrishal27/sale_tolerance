@@ -6,14 +6,15 @@ class StockPicking(models.Model):
     """ Partner Model """
     _inherit = "stock.picking"
 
-    hide_validate_button = fields.Boolean(compute="_compute_hide_validate_button")
+    hide_validate_button = fields.Boolean(compute="_compute_hide_validate_button", store=True)
 
     @api.depends("move_ids_without_package")
     def _compute_hide_validate_button(self):
         """making the button hidden"""
         for picking in self:
-            if picking.move_ids.filtered(lambda l: l.quantity < l.product_uom_qty - l.tolerance
-                                                   or l.quantity > l.product_uom_qty + l.tolerance):
+            tolerance = picking.sale_id.tolerance
+            if picking.move_ids.filtered(lambda l: l.quantity < l.product_uom_qty - tolerance
+                                                   or l.quantity > l.product_uom_qty + tolerance):
                 picking.hide_validate_button = True
             else:
                 picking.hide_validate_button = False
